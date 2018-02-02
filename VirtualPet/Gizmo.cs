@@ -99,7 +99,126 @@ namespace VirtualPet
 
         //Constructors
 
+        public Gizmo() { }
 
+        public Gizmo(bool isHungry, bool isThirsty, bool isBored)
+        {
+            this.isHungry = isHungry;
+            this.isThirsty = isThirsty;
+            this.isBored = isBored;
+            this.hungerLevel = 5;
+            this.thirstLevel = 5;
+            this.boredomLevel = 5;
+        }
+
+        //public Gizmo (int hungerLevel, int thirstLevel, int boredomLevel)
+        //{
+        //    this.hungerLevel = hungerLevel;
+        //    this.thirstLevel = thirstLevel;
+        //    this.boredomLevel = boredomLevel;
+        //} 
+
+        public int FeedGizmo()
+        {
+            if (isHungry == true)
+            {
+                Console.WriteLine("Gizmo has been fed.");
+                
+                Console.WriteLine("Is it after midnight? (type True or False)");
+                afterMidnight = bool.Parse(Console.ReadLine());
+
+                if (afterMidnight == true)
+                {
+                    Console.WriteLine("Gizmo is now a gremlin!");
+                    Console.WriteLine("");
+                }
+
+                else
+                {
+                    Console.WriteLine("All is good.");
+                    Console.WriteLine("");
+                    
+                }
+                return hungerLevel--;
+                return thirstLevel++;
+            }
+            else
+            {
+                Console.WriteLine("Gizmo does not need to be fed.");
+                Console.WriteLine("");
+                return hungerLevel++;
+            }
+        }
+            public int WaterGizmo()
+            {
+                if (isThirsty == true)
+                {
+                    Console.WriteLine("Gizmo has been given some water.");
+                    
+                    Console.WriteLine("Did you spill on Gizmo? (type True or False)");
+                    spilledOnGizmo = bool.Parse(Console.ReadLine());
+
+                    if (spilledOnGizmo == true)
+                    {
+                        Console.WriteLine("Gizmo is now a gremlin!");
+                        Console.WriteLine("");
+                }
+
+                    else
+                    {
+                        Console.WriteLine("All is good.");
+                        Console.WriteLine("");
+                        
+                }
+                return thirstLevel--;
+            }
+
+                else
+                {
+                    Console.WriteLine("Gizmo does not need anything to drink.");
+                    return thirstLevel++;
+                }
+            }
+
+            public int ActivateGizmo()
+            {
+                if (isBored == true)
+                {
+                    Console.WriteLine("Gizmo has been allowed out to play");
+                    
+                    Console.WriteLine("Is it light out? (type True or False)");
+                    isLightOut = bool.Parse(Console.ReadLine());
+                    return boredomLevel--;
+
+                if (isLightOut == true)
+                    {
+                        Console.WriteLine("Gizmo is in critical condition!");
+                        Console.WriteLine("");
+                        return hungerLevel = 10;
+                        return thirstLevel = 10;
+                        return boredomLevel = 10;
+
+                }
+
+                    else
+                    {
+                        Console.WriteLine("All is good!");
+                        Console.WriteLine("");
+                        return boredomLevel--;
+                        return hungerLevel++;
+                        return thirstLevel++;
+                    }
+                }
+
+                else
+                {
+                    Console.WriteLine("Gizmo needs to sleep.");
+                    return boredomLevel++;
+                }
+            }
+                
+        
+        
 
     }
 }
