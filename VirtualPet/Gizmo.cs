@@ -159,9 +159,9 @@ namespace VirtualPet
 
                     if (isLightOut == true)
                     {
-                        Console.WriteLine("Gizmo is in critical condition!");
+                        Console.WriteLine("That hurt Gizmo! Quick! Get back inside!");
                         Console.WriteLine("");
-                        return hungerLevel +10 + thirstLevel +10 + boredomLevel +10;
+                        return hungerLevel++ + thirstLevel++ + boredomLevel++;
                     }
 
                     else
