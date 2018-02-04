@@ -10,12 +10,9 @@ namespace VirtualPet
     {
         //Fields
 
-        private bool isHungry;
         private bool afterMidnight;
         private bool spilledOnGizmo;
         private bool isLightOut;
-        private bool isThirsty;
-        private bool isBored;
         private int boredomLevel;
         private int foodAmount;
         private int hungerLevel;
@@ -24,24 +21,6 @@ namespace VirtualPet
         private int beverageAmount;
 
         //Properties
-
-        public bool IsHungry
-        {
-            get { return this.isHungry; }
-            set { this.isHungry = value; }
-        }
-
-        public bool IsThirsty
-        {
-            get { return this.isThirsty; }
-            set { this.isThirsty = value; }
-        }
-
-        public bool IsBored
-        {
-            get { return this.isBored; }
-            set { this.isBored = value;  }
-        }
 
         public bool AfterMidnight
         {
@@ -101,26 +80,16 @@ namespace VirtualPet
 
         public Gizmo() { }
 
-        public Gizmo(bool isHungry, bool isThirsty, bool isBored)
+        public Gizmo(int hungerLevel, int thirstLevel, int boredomLevel)
         {
-            this.isHungry = isHungry;
-            this.isThirsty = isThirsty;
-            this.isBored = isBored;
-            this.hungerLevel = 5;
-            this.thirstLevel = 5;
-            this.boredomLevel = 5;
+            this.hungerLevel = hungerLevel;
+            this.thirstLevel = thirstLevel;
+            this.boredomLevel = boredomLevel;
         }
-
-        //public Gizmo (int hungerLevel, int thirstLevel, int boredomLevel)
-        //{
-        //    this.hungerLevel = hungerLevel;
-        //    this.thirstLevel = thirstLevel;
-        //    this.boredomLevel = boredomLevel;
-        //} 
 
         public int FeedGizmo()
         {
-            if (isHungry == true)
+            if (hungerLevel >= 1)
             {
                 Console.WriteLine("Gizmo has been fed.");
                 
@@ -139,8 +108,7 @@ namespace VirtualPet
                     Console.WriteLine("");
                     
                 }
-                return hungerLevel--;
-                return thirstLevel++;
+                return hungerLevel-- + thirstLevel++;
             }
             else
             {
@@ -151,7 +119,7 @@ namespace VirtualPet
         }
             public int WaterGizmo()
             {
-                if (isThirsty == true)
+                if (thirstLevel >= 1)
                 {
                     Console.WriteLine("Gizmo has been given some water.");
                     
@@ -182,31 +150,25 @@ namespace VirtualPet
 
             public int ActivateGizmo()
             {
-                if (isBored == true)
+                if (boredomLevel >= 1)
                 {
                     Console.WriteLine("Gizmo has been allowed out to play");
                     
                     Console.WriteLine("Is it light out? (type True or False)");
                     isLightOut = bool.Parse(Console.ReadLine());
-                    return boredomLevel--;
 
-                if (isLightOut == true)
+                    if (isLightOut == true)
                     {
                         Console.WriteLine("Gizmo is in critical condition!");
                         Console.WriteLine("");
-                        return hungerLevel = 10;
-                        return thirstLevel = 10;
-                        return boredomLevel = 10;
-
-                }
+                        return hungerLevel +10 + thirstLevel +10 + boredomLevel +10;
+                    }
 
                     else
                     {
                         Console.WriteLine("All is good!");
                         Console.WriteLine("");
-                        return boredomLevel--;
-                        return hungerLevel++;
-                        return thirstLevel++;
+                        return boredomLevel-- + hungerLevel++ + thirstLevel++;
                     }
                 }
 

@@ -10,7 +10,7 @@ namespace VirtualPet
     {
         static void Main(string[] args)
         {
-            Gizmo userGizmo = new Gizmo(true, true, true);
+            Gizmo userGizmo = new Gizmo(5, 5, 5);
             int userChoice;
 
             Console.WriteLine("Welcome to the Virtual Pet Tender App!");
@@ -47,6 +47,11 @@ namespace VirtualPet
                         Console.WriteLine("Goodbye.");
                         break;
                 }
+
+                //tick
+                userGizmo.HungerLevel++;
+                userGizmo.ThirstLevel++;
+                userGizmo.BoredomLevel++;
             } while (userChoice != 4);
         }
     }
