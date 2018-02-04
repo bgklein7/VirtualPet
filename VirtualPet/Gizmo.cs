@@ -100,6 +100,21 @@ namespace VirtualPet
                 {
                     Console.WriteLine("Gizmo is now a gremlin!");
                     Console.WriteLine("");
+                    Console.Title = "ASCII Art";
+                    string title = @"
+                    _______
+                   /       \
+            \-----`  ^  ^   `----/
+             \ ` `   *  *     ``/
+              `---|         |--`
+                  \  `--`  /
+                   \  \/  /
+                    \    /
+                     \  /
+                      \/
+                                                                 ";
+
+                    Console.WriteLine(title);
                 }
 
                 else
@@ -126,10 +141,26 @@ namespace VirtualPet
                     Console.WriteLine("Did you spill on Gizmo? (type True or False)");
                     spilledOnGizmo = bool.Parse(Console.ReadLine());
 
-                    if (spilledOnGizmo == true)
-                    {
-                        Console.WriteLine("Gizmo is now a gremlin!");
-                        Console.WriteLine("");
+                if (spilledOnGizmo == true)
+                {
+                    Console.WriteLine("Gizmo is now a gremlin!");
+                    Console.WriteLine("");
+                    Console.Title = "ASCII Art";
+                    string title = @"
+                    _______
+                   /       \
+            \-----`  ^  ^   `----/
+             \ ` `   *  *     ``/
+              `---|         |--`
+                  \  `--`  /
+                   \  \/  /
+                    \    /
+                     \  /
+                      \/
+                                                                 ";
+
+                    Console.WriteLine(title);
+                   
                 }
 
                     else
