@@ -87,6 +87,7 @@ namespace VirtualPet
             this.boredomLevel = boredomLevel;
         }
 
+        //Methods
         public int FeedGizmo()
         {
             if (hungerLevel >= 1)
@@ -192,7 +193,7 @@ namespace VirtualPet
                     {
                         Console.WriteLine("That hurt Gizmo! Quick! Get back inside!");
                         Console.WriteLine("");
-                        return hungerLevel++ + thirstLevel++ + boredomLevel++;
+                        return hungerLevel++ + thirstLevel++ + boredomLevel++;//to make go up by more than one use +=10
                     }
 
                     else
