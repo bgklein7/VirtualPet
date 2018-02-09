@@ -210,6 +210,11 @@ namespace VirtualPet
                     return boredomLevel++;
                 }
             }
+
+        public int TickMethod()
+        {
+            return boredomLevel++ + hungerLevel++ + thirstLevel++;
+        }
                 
         
         

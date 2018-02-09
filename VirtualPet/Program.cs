@@ -49,9 +49,8 @@ namespace VirtualPet
                 }
 
                 //tick
-                userGizmo.HungerLevel++;//because of how this is set up levels can never go down. Consider making random.
-                userGizmo.ThirstLevel++;
-                userGizmo.BoredomLevel++; //need to make tick a method
+                userGizmo.TickMethod();
+                
             } while (userChoice != 4);
         }
     }
